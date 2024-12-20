@@ -1,0 +1,35 @@
+name: Publish udagawa-ui
+run-name: udagawa-ui - publish
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+  
+jobs:
+  up-version:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set config
+        run: pnpm config set "//npm.pkg.github.com/:_authToken" "${NODE_AUTH_TOKEN}"
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Install modules
+        run: |
+          pnpm i
+          pnpm build
+
+      - name: Publish
+        run: |
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

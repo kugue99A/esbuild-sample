@@ -1,0 +1,11 @@
+.udui__Button_root {
+  display: grid;
+  padding: 20px 32px;
+  border: none;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+  border-radius: 100px;
+  background-color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1c9988;
+}

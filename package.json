@@ -1,0 +1,49 @@
+{
+  "name": "@kugue99A/udagawa-ui",
+  "version": "0.1.0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "types": "index.d.ts",
+  "files": [
+    "dist",
+    "index.js",
+    "index.d.ts",
+    "style.css"
+  ],
+  "scripts": {
+    "build": "node ./build.mjs",
+    "storybook": "storybook dev -p 6006 -c ./playground/storybook/.storybook"
+  },
+  "dependencies": {
+    "esbuild": "0.24.0",
+    "tsup": "8.3.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@storybook/addon-essentials": "8.4.7",
+    "@storybook/addon-interactions": "8.4.7",
+    "@storybook/addon-webpack5-compiler-swc": "1.0.5",
+    "@storybook/blocks": "8.4.7",
+    "@storybook/react": "8.4.7",
+    "@storybook/react-webpack5": "8.4.7",
+    "@storybook/test": "8.4.7",
+    "storybook": "8.4.7",
+    "typescript": "5.6.3"
+  },
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+    "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
+  },
+  "packageManager": "pnpm@9.3.0"
+}
